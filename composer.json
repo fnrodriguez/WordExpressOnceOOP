@@ -1,5 +1,5 @@
 {
-  "name": "fnrodriguez/WordExpressOnceOOP",
+  "name": "fnrodriguez/wordexpress-once-oop",
   "description": "Transforming Wordpress Once to OOP (Object Oriented Programming)",
   "authors": [
     {
@@ -12,7 +12,7 @@
     "php": ">=5.3.0"
   },
   "autoload": {
-    "psr-4": { "WordExpressOnceOOP\\": "src/"
+    "psr-4": { "wordexpress-once-oop\\": "src/"
     }
   }
   

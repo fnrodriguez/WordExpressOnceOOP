@@ -22,7 +22,7 @@ class WP_ONCE
      *
      * @param string $action The nonce action.
      */
-    function wp_nonce_ays( $action ) {
+    static function wp_nonce_ays( $action ) {
         if ( 'log-out' == $action ) {
             $html = sprintf(
             /* translators: %s: site name */
@@ -60,7 +60,7 @@ class WP_ONCE
      * @param string     $name      Optional. Nonce name. Default '_wpnonce'.
      * @return string Escaped URL with nonce action added.
      */
-    function wp_nonce_url( $actionurl, $action = -1, $name = '_wpnonce' ) {
+    static function wp_nonce_url( $actionurl, $action = -1, $name = '_wpnonce' ) {
         $actionurl = str_replace( '&amp;', '&', $actionurl );
         return esc_html( add_query_arg( $name, wp_create_nonce( $action ), $actionurl ) );
     }
@@ -91,7 +91,7 @@ class WP_ONCE
      * @param bool       $echo    Optional. Whether to display or return hidden form field. Default true.
      * @return string Nonce field HTML markup.
      */
-    function wp_nonce_field( $action = -1, $name = "_wpnonce", $referer = true , $echo = true ) {
+    static function wp_nonce_field( $action = -1, $name = "_wpnonce", $referer = true , $echo = true ) {
         $name = esc_attr( $name );
         $nonce_field = '<input type="hidden" id="' . $name . '" name="' . $name . '" value="' . wp_create_nonce( $action ) . '" />';
 
